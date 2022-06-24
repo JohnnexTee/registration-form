@@ -1,90 +1,154 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
-  font: 15px/1.5 Arial, Helvetica, sans-serif;
-  /* font-size: 15px;
-    line-height: 1.5; */
-  padding: 0;
-  margin: auto;
-  background-color: #f4f4f4;
+* {
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(0, 100%, 74%);
+    background-image: url('bg-intro-desktop.png');
+    color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Showcase ... slider */
-#container {
-  width: 1000px;
-  height: 650px;
-  margin: auto;
-  margin-top: 100px;
-  background-color: #ff7978;
-  background-image: url(imagess/images/bg-intro-desktop.png);
-  overflow: hidden;
-}
-.side1 {
-  width: 50%;
-  height: 100%;
-  float: left;
+.container {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    min-height: 100vh;
 }
 
-.side2 {
-  width: 50%;
-  height: 100%;
-  float: left;
+.container div {
+    flex: 1;
+    padding: 0 20px;
 }
-h2,
+
+h1 {
+    font-size: 40px;
+    line-height: 45px;
+}
+
 p {
-  text-align: center;
+    font-size: 16px;
 }
 
-/* FORMS */
-input,
-select {
-  width: 400px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  width: 400px;
-  background-color: #3fb6dc;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #35424a;
-}
-
-form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-/* Media Queries */
-
-@media (max-width: 768px) {
-  header .logo,
-  header nav,
-  header nav li,
-  #newsletter h1,
-  #newsletter form,
-  #boxes .box,
-  article#main-col,
-  aside#sidebar {
-    float: none;
+.box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 6px rgb(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 30px;
     text-align: center;
+}
+
+
+.box-blue {
+    background-color: hsl(248, 32%, 49%);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.box-blue p {
+    padding: 20px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control small {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+input {
+    border: 1px solid hsl(246, 25%, 77%);
     width: 100%;
-  }
-  header {
-    padding-bottom: 40px;
-  }
+    display: block;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input:focus {
+    border: 1.3px solid hsl(248, 32%, 49%);
+    outline: none;
+}
+
+button {
+    background-color: hsl(154, 59%, 51%);
+    border-radius: 5px;
+    border: 1px solid;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 25px;
+    display: block;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+small {
+    color: #bbb;
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+small a {
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+input:invalid {
+    outline: none;
+    border: none;
+    border: 2px solid hsl(0, 100%, 74%);
+    color: (0, 100%, 74%);
+    background-image: url('icon-error.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-origin: content-box;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input:invalid+span {
+    display: block;
+    font-weight: 600;
+    font-style: italic;
+    color: hsl(0, 100%, 74%);
+    margin-left: 65%;
+}
+
+input:valid {
+    outline: none;
+    border: none;
+    border: 1px solid hsl(154, 59%, 51%);
+}
+
+span {
+    display: none;
+    font-size: 10px;
+}
+@media screen and (max-width: 375px) {
+    h1 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .box-blue p {
+        padding: 10px;
+    }
 }
